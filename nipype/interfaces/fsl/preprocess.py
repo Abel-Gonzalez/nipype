@@ -821,10 +821,12 @@ class MCFLIRT(FSLCommand):
 
     def _list_outputs(self):
         # cwd = os.getcwd()
-        cwd = os.path.dirname(out_file)
+       
         outputs = self._outputs().get()
 
         outputs['out_file'] = self._gen_outfilename()
+        
+        cwd = os.path.dirname(outputs['out_file'])
 
         if isdefined(self.inputs.stats_imgs) and self.inputs.stats_imgs:
             outputs['variance_img'] = self._gen_fname(
