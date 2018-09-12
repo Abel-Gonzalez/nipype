@@ -820,7 +820,8 @@ class MCFLIRT(FSLCommand):
         return super(MCFLIRT, self)._format_arg(name, spec, value)
 
     def _list_outputs(self):
-        cwd = os.getcwd()
+        # cwd = os.getcwd()
+        cwd = os.path.dirname(out_file)
         outputs = self._outputs().get()
 
         outputs['out_file'] = self._gen_outfilename()
